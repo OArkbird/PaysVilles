@@ -8,48 +8,38 @@ using System.Threading.Tasks;
 
 namespace PaysVilles
 {
-    public class StdGameRuleChecker: IRuleCheker
+    public class StdGameRuleChecker : IRuleCheker
     {
         AlphaChecker alphaCheck;
 
-        public StdGameRuleChecker() 
+        public StdGameRuleChecker()
         {
             alphaCheck = new AlphaChecker();
         }
 
-        public StdGameRuleChecker(AlphaChecker injectedAlphaCheck) 
+        public StdGameRuleChecker(AlphaChecker injectedAlphaCheck)
         {
             alphaCheck = injectedAlphaCheck;
         }
 
-        public bool CheckWord(string gameLetter, string word)
+        public bool CheckWord(char gameLetter, string word)
         {
-            
-            if (gameLetter.Length == 1) 
+
+            if (alphaCheck.IsALetter(gameLetter))
             {
-                if (alphaCheck.IsALetter(gameLetter))
+                if (word[0] == gameLetter)
                 {
-                    if (word[0].ToString() == gameLetter)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return true;
                 }
-                else 
+                else
                 {
-                    throw new InvalidArgumentException("The String should be a Letter");
+                    return false;
                 }
-                
             }
-            else 
+            else
             {
-                throw new InvalidArgumentException("The String Length of the first argument have To be One");
+                throw new InvalidArgumentException("The char Argument is not a Letter");
             }
-            
-            
         }
     }
 }

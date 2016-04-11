@@ -9,7 +9,7 @@ namespace PaysVilles
     public class AlphaChecker
     {
 
-       virtual public bool IsALetter(string letter)
+       virtual public bool IsALetter(char letter)
         {
             throw new NotImplementedException();
         }
