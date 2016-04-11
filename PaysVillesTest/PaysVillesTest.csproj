@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AlphaCheckerTest.cs" />
     <Compile Include="LetterGeneratorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StdGameRuleCheckerTest.cs" />
