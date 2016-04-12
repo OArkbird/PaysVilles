@@ -49,9 +49,11 @@
   <ItemGroup>
     <Compile Include="AlphaChecker.cs" />
     <Compile Include="Exceptions\InvalidArgumentException.cs" />
+    <Compile Include="GameReferee.cs" />
     <Compile Include="ILetterGenerator.cs" />
     <Compile Include="IRuleCheker.cs" />
     <Compile Include="LetterGenerator.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StdGameRuleChecker.cs" />
