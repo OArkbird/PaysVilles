@@ -59,6 +59,7 @@
     <Compile Include="LetterGeneratorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StdGameRuleCheckerTest.cs" />
+    <Compile Include="ThemeGeneratorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PaysVilles\PaysVilles.csproj">

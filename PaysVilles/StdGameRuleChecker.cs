@@ -22,9 +22,9 @@ namespace PaysVilles
             alphaCheck = injectedAlphaCheck;
         }
 
-        public bool CheckWord(char gameLetter, string word)
+        public bool CheckLetter(char gameLetter, string word)
         {
-
+            // check if the word beggins with the gameletter
             if (alphaCheck.IsALetter(gameLetter))
             {
                 if (word[0] == gameLetter)

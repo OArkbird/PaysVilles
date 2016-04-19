@@ -28,7 +28,7 @@ namespace PaysVillesTest
             StdGameRuleChecker ruleChecker = new StdGameRuleChecker(alphaCheck.Object);
             char gameLetter = 'A';
             //Act
-            bool testValue = ruleChecker.CheckWord(gameLetter,"Bonjour");
+            bool testValue = ruleChecker.CheckLetter(gameLetter,"Bonjour");
             //Assert
             Assert.AreEqual(false, testValue);
 
@@ -42,7 +42,7 @@ namespace PaysVillesTest
             StdGameRuleChecker ruleChecker = new StdGameRuleChecker(alphaCheck.Object);
             char gameLetter = 'A';
             //Act
-            bool testValue = ruleChecker.CheckWord(gameLetter, "Allo");
+            bool testValue = ruleChecker.CheckLetter(gameLetter, "Allo");
             //Assert
             Assert.AreEqual(true, testValue);
 
@@ -56,7 +56,7 @@ namespace PaysVillesTest
             StdGameRuleChecker ruleChecker = new StdGameRuleChecker(alphaCheck.Object);
             char gameLetter = ' ';
             //Act
-            bool testValue = ruleChecker.CheckWord(gameLetter, "Allo");
+            bool testValue = ruleChecker.CheckLetter(gameLetter, "Allo");
             //Assert
            
 
