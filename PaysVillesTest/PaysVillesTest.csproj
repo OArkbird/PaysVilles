@@ -66,6 +66,10 @@
       <Project>{9d0bd545-7af3-422a-8054-2e1fd9dc140f}</Project>
       <Name>PaysVilles</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PVRepositories\PVRepositories.csproj">
+      <Project>{7692e3cb-d817-4697-b6ed-e433050653c1}</Project>
+      <Name>PVRepositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

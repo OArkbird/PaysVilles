@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlphaChecker.cs" />
+    <Compile Include="Exceptions\EmptyListException.cs" />
     <Compile Include="Exceptions\InvalidArgumentException.cs" />
     <Compile Include="GameReferee.cs" />
     <Compile Include="ILetterGenerator.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StdGameRuleChecker.cs" />
+    <Compile Include="ThemeGenerator.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -83,6 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PVRepositories\PVRepositories.csproj">
+      <Project>{7692e3cb-d817-4697-b6ed-e433050653c1}</Project>
+      <Name>PVRepositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

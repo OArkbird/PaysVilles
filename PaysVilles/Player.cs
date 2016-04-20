@@ -10,8 +10,14 @@ namespace PaysVilles
     {
         public string UserName { get; set; }
 
+        public int Score { get; set; }
+
         private List<string> answerList = new List<string>();
 
-        public List<string> AnswerList { get { return answerList; }}
+        public List<string> AnswerList 
+        { 
+            get { return answerList; }
+            set { answerList = value; }
+        }
     }
 }

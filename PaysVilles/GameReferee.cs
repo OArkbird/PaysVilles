@@ -10,6 +10,7 @@ namespace PaysVilles
     {
         public int CalculateScore(Player myPlayer)
         {
+            // Calculate the score of a player based on the answerList;
             int score = 0;
 
             if (myPlayer.AnswerList.Count > 0) 

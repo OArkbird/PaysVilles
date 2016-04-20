@@ -10,9 +10,9 @@ namespace PaysVilles
     {
         Random randGen = new Random();
         
-        public string Generate()
+        public char Generate()
         { 
-            return ((char)randGen.Next(97,122)).ToString();
+            return ((char)randGen.Next(97,122));
         }
     }
 }

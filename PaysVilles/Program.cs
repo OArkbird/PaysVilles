@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PVRepositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,24 +13,67 @@ namespace PaysVilles
         [STAThread]
         static void Main()
         {
+            //Introduction
             Console.WriteLine("Bienvenue sur PAYSVILLES");
-            LetterGenerator Lgenerator = new LetterGenerator();
-            int Themenumber = 5;
-            List<string> themeList = new List<string>() { "Pays","Villes","Pokemon","Football Player","Video Game"};
-            string gameLetter = Lgenerator.Generate();
-            Console.WriteLine("Cycle 1, nous joueons avec la lettre: " + gameLetter);
 
-            List<string> answersList = new List<string>();
+            //Game Setting
+            List<Thema> themes = new List<Thema>() { new Thema() { Id = 0, Name = "Pays" }, new Thema() { Id = 2, Name = "Villes" }, new Thema() { Id = 3, Name = "Pokemon" }
+            ,new Thema(){Id = 4},new Thema(){Id = 5, Name = "Film"}, new Thema(){Id = 6, Name = "Jeu Video"}, new Thema(){Id = 7, Name = "Sport"}};
 
-            foreach(string theme in themeList) 
+            StdGameRuleChecker checker = new StdGameRuleChecker();
+            ThemeGenerator tGenerator = new ThemeGenerator(themes);
+            int themeNumber = 8;
+            int phaseNumber = 5;
+            Thema theme;
+            GameReferee referee = new GameReferee();
+            Player playerOne = new Player();
+
+            //GameLoop
+            LetterGenerator lGenerator = new LetterGenerator();
+
+            //PhaseLoops
+            for (int i = 1; i <= phaseNumber; i++) 
             {
-                Console.WriteLine("Ecrivez un mot lie au theme suivant: " + theme);
-                answersList.Add(Console.ReadLine());
+                string playerWord = "";
+                playerOne.AnswerList = new List<string>();
+                char gameLetter = lGenerator.Generate();
+
+                Console.WriteLine("Cycle 1, nous joueons avec la lettre: " + gameLetter);
+                Console.WriteLine("Debut de la phase " + i);
+                //ActionLoops
+                for (int j = 0; j < themeNumber; j++) 
+                {
+                    theme = tGenerator.Generate();
+                    
+                    playerWord = Console.ReadLine();
+
+                    //Check word Begins with the gameLetter
+                    while (!checker.CheckLetter(gameLetter, playerWord)) 
+                    {
+                        Console.WriteLine("Attention, le mot entre ne debute pas par la letre " + gameLetter);
+                        Console.WriteLine("Veuillez reiterer votre reponse");
+                        playerWord = Console.ReadLine();
+                    
+                    }
+                    //Check word exist
+
+                    //Check word respectes the theme
+
+                    
+                    
+                        playerOne.AnswerList.Add(playerWord);
+                    
+                    
+                }
+
+               Console.WriteLine("Your score for this phase is :" + referee.CalculateScore(playerOne)); 
+               playerOne.Score += referee.CalculateScore(playerOne);
+               Console.WriteLine("Fin de la phase" + i);
+
             }
 
-
-            
-
+            Console.WriteLine("Fin du jeu");
+            Console.WriteLine("Vous totalisez un score de " + playerOne.Score);            
             
         }
     }
