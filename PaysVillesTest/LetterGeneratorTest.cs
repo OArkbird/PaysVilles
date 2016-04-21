@@ -27,9 +27,9 @@ namespace PaysVillesTest
                 "u","v","w","x","y","z"
             };   
             //Act
-            string testValue = generator.Generate();
+            char testValue = generator.Generate();
             //Assert
-            Assert.IsFalse(!letterRange.Exists(x => x == testValue.ToLower()));
+            Assert.IsFalse(!letterRange.Exists(x => x == testValue.ToString().ToLower()));
         }
 
         [TestMethod]
@@ -37,8 +37,8 @@ namespace PaysVillesTest
         {
             //Arrange
             //Act
-            string testValue1 = generator.Generate();
-            string testValue2 = generator.Generate();
+            char testValue1 = generator.Generate();
+            char testValue2 = generator.Generate();
 
             //Assert
             Assert.AreNotEqual(testValue1, testValue2);

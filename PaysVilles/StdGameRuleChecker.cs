@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PVRepositories;
 
 
 
@@ -41,5 +42,36 @@ namespace PaysVilles
                 throw new InvalidArgumentException("The char Argument is not a Letter");
             }
         }
+
+        public bool CheckTheme(Thema myTheme, string word)
+        {
+            return true;
+        }
+
+        public bool CheckIfWordExist(string myWord, Thema theme)
+        {
+            System.IO.StreamReader dico = new System.IO.StreamReader("../../../Dictionnaires/" + theme.Name.ToLower() + ".txt");
+
+            myWord = myWord.ToLower().Trim();
+            string dicoWord =  dico.ReadLine().ToLower().Trim();
+            bool wordIsFound = false;
+
+            while (dicoWord != null && wordIsFound == false)
+            {
+                if (dicoWord.ToLower().Trim() == myWord)
+                {
+                    wordIsFound = true;
+                }
+                else
+                {
+                    dicoWord = dico.ReadLine();
+                }
+
+            }
+
+            return wordIsFound;            
+        }
+
+
     }
 }

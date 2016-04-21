@@ -28,7 +28,8 @@ namespace PaysVillesTest
             //Arrange
             
             List<Thema> themes = new List<Thema>() { new Thema() { Id = 0 }, new Thema() { Id = 2 }, new Thema() { Id = 3 }
-            ,new Thema(){Id = 4},new Thema(){Id = 5}, new Thema(){Id = 6}, new Thema(){Id = 7}};
+            ,new Thema(){Id = 4},new Thema(){Id = 5}, new Thema(){Id = 6}, new Thema(){Id = 7}, new Thema(){Id = 8}, 
+            new Thema(){Id = 9}, new Thema(){Id = 10}, new Thema(){Id = 11}};
             ThemeGenerator tGenerator = new ThemeGenerator(themes);
             
             //Act
