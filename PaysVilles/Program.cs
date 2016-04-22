@@ -13,9 +13,6 @@ namespace PaysVilles
         [STAThread]
         static void Main()
         {
-            
-
-
 
             //System.IO.StreamReader dico = new System.IO.StreamReader("../../../Dictionnaires/dicoUK.txt");
 

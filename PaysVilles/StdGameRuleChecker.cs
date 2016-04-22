@@ -11,11 +11,18 @@ namespace PaysVilles
 {
     public class StdGameRuleChecker : IRuleCheker
     {
+        //Members variables
         AlphaChecker alphaCheck;
 
+        WordRepo wordRepo;
+        ThemeRepo themeRepo;
+
+        //Constructors
         public StdGameRuleChecker()
         {
             alphaCheck = new AlphaChecker();
+            wordRepo =  new WordRepo();
+            themeRepo = new ThemeRepo();
         }
 
         public StdGameRuleChecker(AlphaChecker injectedAlphaCheck)
@@ -23,6 +30,23 @@ namespace PaysVilles
             alphaCheck = injectedAlphaCheck;
         }
 
+        public StdGameRuleChecker(WordRepo injectedRepo)
+        {
+            wordRepo = injectedRepo;
+        }
+
+        public StdGameRuleChecker(ThemeRepo injectedRepo)
+        {
+            themeRepo = injectedRepo;
+        }
+
+        public StdGameRuleChecker(ThemeRepo injectedTRepo, WordRepo injectedWRepo)
+        {
+            wordRepo = injectedWRepo;
+            themeRepo = injectedTRepo;
+        }
+
+        //Methods
         public bool CheckLetter(char gameLetter, string word)
         {
             // check if the word beggins with the gameletter
@@ -45,32 +69,51 @@ namespace PaysVilles
 
         public bool CheckTheme(Thema myTheme, string word)
         {
+            
             return true;
         }
 
-        public bool CheckIfWordExist(string myWord, Thema theme)
+        public bool CheckIfWordExist(string myWord)
         {
-            System.IO.StreamReader dico = new System.IO.StreamReader("../../../Dictionnaires/" + theme.Name.ToLower() + ".txt");
+            List<object> words = wordRepo.GetAll();
 
             myWord = myWord.ToLower().Trim();
-            string dicoWord =  dico.ReadLine().ToLower().Trim();
             bool wordIsFound = false;
 
-            while (dicoWord != null && wordIsFound == false)
+            foreach(string listWord in words) 
             {
-                if (dicoWord.ToLower().Trim() == myWord)
+                if (myWord == listWord.ToLower().Trim()) 
                 {
                     wordIsFound = true;
                 }
-                else
-                {
-                    dicoWord = dico.ReadLine();
-                }
-
             }
 
-            return wordIsFound;            
+            return wordIsFound;
         }
+
+        //public bool CheckIfWordExist(string myWord, Thema theme)
+        //{
+        //    System.IO.StreamReader dico = new System.IO.StreamReader("../../../Dictionnaires/" + theme.Name.ToLower() + ".txt");
+
+        //    myWord = myWord.ToLower().Trim();
+        //    string dicoWord =  dico.ReadLine().ToLower().Trim();
+        //    bool wordIsFound = false;
+
+        //    while (dicoWord != null && wordIsFound == false)
+        //    {
+        //        if (dicoWord.ToLower().Trim() == myWord)
+        //        {
+        //            wordIsFound = true;
+        //        }
+        //        else
+        //        {
+        //            dicoWord = dico.ReadLine();
+        //        }
+
+        //    }
+
+        //    return wordIsFound;            
+        //}
 
 
     }

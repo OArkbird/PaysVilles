@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PaysVilles;
 using Moq;
 using PVRepositories;
+using System.Collections.Generic;
 
 
 
@@ -21,7 +22,7 @@ namespace PaysVillesTest
         }
 
         [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckWordMethodIsCalled_GivenThegameLetterAAndAStringNotBeginningWithLetterA()
+        public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckLetterMethodIsCalled_GivenThegameLetterAAndAStringNotBeginningWithLetterA()
         {
             //Arrange
             
@@ -36,7 +37,7 @@ namespace PaysVillesTest
         }
 
         [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckWordMethodIsCalled_GivenThegameLetterAAndAStringBeginningWithLetterA()
+        public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckLetterMethodIsCalled_GivenThegameLetterAAndAStringBeginningWithLetterA()
         {
             //Arrange
             alphaCheck.Setup(x => x.IsALetter('A')).Returns(true);
@@ -50,7 +51,7 @@ namespace PaysVillesTest
         }
         [TestMethod]
         [ExpectedException(typeof(InvalidArgumentException))]
-        public void Test_StdGameRuleChecker_ThrowsAnInvalidArgumentException_WhenCheckWordMethodIsCalled_GivenASpaceChargameLetter()
+        public void Test_StdGameRuleChecker_ThrowsAnInvalidArgumentException_WhenCheckLetterMethodIsCalled_GivenASpaceChargameLetter()
         {
             //Arrange
             alphaCheck.Setup(x => x.IsALetter(' ')).Returns(false);
@@ -64,117 +65,68 @@ namespace PaysVillesTest
         }
 
         [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckIfWordExistMethodIsCalled_GivenAnExistingWordForGeneralTheme()
+        public void Test_StdGameRuleChecker_CallsGetAllMethodFromWordRepoClass_WhenCheckIfWordExistMethodIsCalled_GivenAGeneralThemeInArgument()
         {
             //Arrange
-            StdGameRuleChecker ruleChecker = new StdGameRuleChecker();
-            Thema theme = new Thema() { Name = "General" };
-            string myWord = "Bonjour";
+            Mock<IRepository> repo = new Mock<IRepository>();
+            repo.Setup(x => x.GetAll()).Returns(new List<object>());
+            StdGameRuleChecker ruleChecker = new StdGameRuleChecker((WordRepo)repo.Object);
+            
             //Act
-            bool testValue = ruleChecker.CheckIfWordExist(myWord,theme);
+            ruleChecker.CheckIfWordExist("anything");
+            //Assert
+            repo.Verify(x => x.GetAll());
+
+        }
+
+        [TestMethod]
+        public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckIfWordExistMethodIsCalled_GivenAnExistingWord()
+        {
+            //Arrange
+            List<object> wordList = new List<object>() {"pikachu", "reptincel","Raichu","Arbok","Tauros" };
+
+            Mock<IRepository> repo = new Mock<IRepository>();
+            repo.Setup(x => x.GetAll()).Returns(wordList);
+            StdGameRuleChecker ruleChecker = new StdGameRuleChecker((WordRepo)repo.Object);
+            string myWord = "Raichu";
+            //Act
+            bool testValue = ruleChecker.CheckIfWordExist(myWord);
             //Assert
             Assert.AreEqual(true, testValue);
 
         }
 
         [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckIfWordExistMethodIsCalled_GivenAnNonExistingWordForGeneralTheme()
+        public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckIfWordExistMethodIsCalled_GivenANonExistingWord()
         {
             //Arrange
-            StdGameRuleChecker ruleChecker = new StdGameRuleChecker();
-            Thema theme = new Thema() { Name = "General" };
-            string myWord = "poulouipzza";
+            List<object> wordList = new List<object>() { "pikachu", "reptincel", "Raichu", "Arbok", "Tauros" };
+
+            Mock<IRepository> repo = new Mock<IRepository>();
+            repo.Setup(x => x.GetAll()).Returns(wordList);
+            StdGameRuleChecker ruleChecker = new StdGameRuleChecker((WordRepo)repo.Object);
+            string myWord = "Gabumon";
             //Act
-            bool testValue = ruleChecker.CheckIfWordExist(myWord,theme);
+            bool testValue = ruleChecker.CheckIfWordExist(myWord);
             //Assert
             Assert.AreEqual(false, testValue);
 
         }
 
         [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckIfWordExistMethodIsCalled_GivenAnExistingWordForCountryTheme()
+        public void Test_StdGameRuleChecker_CallsGetAllMethodFromThemeRepoClass_WhenCheckThemeMethodIsCalled()
         {
             //Arrange
-            StdGameRuleChecker ruleChecker = new StdGameRuleChecker();
-            string myWord = "Albania";
-            Thema theme = new Thema() { Name = "Country" };
+            Mock<IRepository> repo = new Mock<IRepository>();
+            repo.Setup(x => x.GetAll()).Returns(new List<object>());
+            StdGameRuleChecker ruleChecker = new StdGameRuleChecker((ThemeRepo)repo.Object);
+            Thema theme = new Thema();
             //Act
-            bool testValue = ruleChecker.CheckIfWordExist(myWord, theme);
+            ruleChecker.CheckTheme(theme,"Anything");
             //Assert
-            Assert.AreEqual(true, testValue);
+            repo.Verify(x => x.GetAll());
 
         }
-
-        [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckIfWordExistMethodIsCalled_GivenAnNonExistingWordForCountryTheme()
-        {
-            //Arrange
-            StdGameRuleChecker ruleChecker = new StdGameRuleChecker();
-            string myWord = "Indianstan";
-            Thema theme = new Thema() { Name = "Country" };
-            //Act
-            bool testValue = ruleChecker.CheckIfWordExist(myWord, theme);
-            //Assert
-            Assert.AreEqual(false, testValue);
-
-        }
-
-        [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckIfWordExistMethodIsCalled_GivenAnExistingWordForPokemonTheme()
-        {
-            //Arrange
-            StdGameRuleChecker ruleChecker = new StdGameRuleChecker();
-            string myWord = "Charizard";
-            Thema theme = new Thema() { Name = "Pokemon" };
-            //Act
-            bool testValue = ruleChecker.CheckIfWordExist(myWord, theme);
-            //Assert
-            Assert.AreEqual(true, testValue);
-
-        }
-
-        [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckIfWordExistMethodIsCalled_GivenAnNonExistingWordForPokemonTheme()
-        {
-            //Arrange
-            StdGameRuleChecker ruleChecker = new StdGameRuleChecker();
-            string myWord = "Agumon";
-            Thema theme = new Thema() { Name = "Pokemon" };
-            //Act
-            bool testValue = ruleChecker.CheckIfWordExist(myWord, theme);
-            //Assert
-            Assert.AreEqual(false, testValue);
-
-        }
-
-        //[TestMethod]
-        //public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckThemeMethodIsCalled_GivenAthemeAndAWordRespectingTheTheme()
-        //{
-        //    //Arrange
-        //    StdGameRuleChecker ruleChecker = new StdGameRuleChecker(alphaCheck.Object);
-        //    Thema myTheme = new Thema() { Name = "Pokemon" };
-        //    //Act
-        //    bool testValue = ruleChecker.CheckTheme(myTheme, "Pikachu");
-        //    //Assert
-        //    Assert.AreEqual(true, testValue);
-
-        //}
-
-        //[TestMethod]
-        //public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckThemeMethodIsCalled_GivenAthemeAndAWordNotRespectingTheTheme()
-        //{
-        //    //Arrange
-        //    StdGameRuleChecker ruleChecker = new StdGameRuleChecker(alphaCheck.Object);
-        //    Thema myTheme = new Thema() { Name = "Pokemon" };
-        //    //Act
-        //    bool testValue = ruleChecker.CheckTheme(myTheme, "Agumon");
-        //    //Assert
-        //    Assert.AreEqual(false, testValue);
-
-        //}
-
-
-
 
         
     }
