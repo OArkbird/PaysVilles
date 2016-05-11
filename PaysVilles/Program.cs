@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace PaysVilles
 {
@@ -13,6 +16,7 @@ namespace PaysVilles
         [STAThread]
         static void Main()
         {
+            
 
             //System.IO.StreamReader dico = new System.IO.StreamReader("../../../Dictionnaires/dicoUK.txt");
 
