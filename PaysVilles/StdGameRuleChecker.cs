@@ -9,45 +9,42 @@ using PVRepositories;
 
 namespace PaysVilles
 {
-    public class StdGameRuleChecker : IRuleCheker
+    public class StdGameRuleChecker : GameRuleChecker
     {
-        //Members variables
-        AlphaChecker alphaCheck;
-
-        WordRepo wordRepo;
-        ThemeRepo themeRepo;
-
+        
         //Constructors
-        public StdGameRuleChecker()
+        public StdGameRuleChecker():
+            base()
         {
-            alphaCheck = new AlphaChecker();
-            wordRepo =  new WordRepo();
-            themeRepo = new ThemeRepo();
+            
         }
 
-        public StdGameRuleChecker(AlphaChecker injectedAlphaCheck)
+        public StdGameRuleChecker(AlphaChecker injectedAlphaCheck): 
+            base(injectedAlphaCheck)
         {
-            alphaCheck = injectedAlphaCheck;
+            
         }
 
-        public StdGameRuleChecker(WordRepo injectedRepo)
+        public StdGameRuleChecker(WordRepo injectedRepo): 
+            base(injectedRepo)
         {
-            wordRepo = injectedRepo;
+            
         }
 
-        public StdGameRuleChecker(ThemeRepo injectedRepo)
+        public StdGameRuleChecker(ThemeRepo injectedRepo): 
+            base(injectedRepo)
         {
-            themeRepo = injectedRepo;
+            
         }
 
         public StdGameRuleChecker(ThemeRepo injectedTRepo, WordRepo injectedWRepo)
+            : base(injectedTRepo, injectedWRepo)
         {
-            wordRepo = injectedWRepo;
-            themeRepo = injectedTRepo;
+            
         }
 
         //Methods
-        public bool CheckLetter(char gameLetter, string word)
+        public override bool CheckRule(char gameLetter, string word)
         {
             // check if the word beggins with the gameletter
             if (alphaCheck.IsALetter(gameLetter))
@@ -65,30 +62,6 @@ namespace PaysVilles
             {
                 throw new InvalidArgumentException("The char Argument is not a Letter");
             }
-        }
-
-        public bool CheckTheme(Thema myTheme, string word)
-        {
-            
-            return true;
-        }
-
-        public bool CheckIfWordExist(string myWord)
-        {
-            List<object> words = wordRepo.GetAll();
-
-            myWord = myWord.ToLower().Trim();
-            bool wordIsFound = false;
-
-            foreach(string listWord in words) 
-            {
-                if (myWord == listWord.ToLower().Trim()) 
-                {
-                    wordIsFound = true;
-                }
-            }
-
-            return wordIsFound;
         }
 
         //public bool CheckIfWordExist(string myWord, Thema theme)

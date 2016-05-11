@@ -22,7 +22,7 @@ namespace PaysVillesTest
         }
 
         [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckLetterMethodIsCalled_GivenThegameLetterAAndAStringNotBeginningWithLetterA()
+        public void Test_StdGameRuleChecker_ReturnsFalse_WhenCheckRuleMethodIsCalled_GivenThegameLetterAAndAStringNotBeginningWithLetterA()
         {
             //Arrange
             
@@ -30,35 +30,35 @@ namespace PaysVillesTest
             StdGameRuleChecker ruleChecker = new StdGameRuleChecker(alphaCheck.Object);
             char gameLetter = 'A';
             //Act
-            bool testValue = ruleChecker.CheckLetter(gameLetter,"Bonjour");
+            bool testValue = ruleChecker.CheckRule(gameLetter,"Bonjour");
             //Assert
             Assert.AreEqual(false, testValue);
 
         }
 
         [TestMethod]
-        public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckLetterMethodIsCalled_GivenThegameLetterAAndAStringBeginningWithLetterA()
+        public void Test_StdGameRuleChecker_ReturnsTrue_WhenCheckRuleMethodIsCalled_GivenThegameLetterAAndAStringBeginningWithLetterA()
         {
             //Arrange
             alphaCheck.Setup(x => x.IsALetter('A')).Returns(true);
             StdGameRuleChecker ruleChecker = new StdGameRuleChecker(alphaCheck.Object);
             char gameLetter = 'A';
             //Act
-            bool testValue = ruleChecker.CheckLetter(gameLetter, "Allo");
+            bool testValue = ruleChecker.CheckRule(gameLetter, "Allo");
             //Assert
             Assert.AreEqual(true, testValue);
 
         }
         [TestMethod]
         [ExpectedException(typeof(InvalidArgumentException))]
-        public void Test_StdGameRuleChecker_ThrowsAnInvalidArgumentException_WhenCheckLetterMethodIsCalled_GivenASpaceChargameLetter()
+        public void Test_StdGameRuleChecker_ThrowsAnInvalidArgumentException_WhenCheckRuleMethodIsCalled_GivenASpaceChargameLetter()
         {
             //Arrange
             alphaCheck.Setup(x => x.IsALetter(' ')).Returns(false);
             StdGameRuleChecker ruleChecker = new StdGameRuleChecker(alphaCheck.Object);
             char gameLetter = ' ';
             //Act
-            bool testValue = ruleChecker.CheckLetter(gameLetter, "Allo");
+            bool testValue = ruleChecker.CheckRule(gameLetter, "Allo");
             //Assert
            
 

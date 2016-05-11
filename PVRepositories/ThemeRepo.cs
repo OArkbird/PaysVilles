@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PaysVilles
+namespace PVRepositories
 {
-    public interface IRuleCheker
+    public class ThemeRepo
     {
-        
+       
     }
 }

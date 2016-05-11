@@ -62,8 +62,9 @@
     <Compile Include="Exceptions\EmptyListException.cs" />
     <Compile Include="Exceptions\InvalidArgumentException.cs" />
     <Compile Include="GameReferee.cs" />
+    <Compile Include="GameRuleChecker.cs" />
     <Compile Include="ILetterGenerator.cs" />
-    <Compile Include="IRuleCheker.cs" />
+    <Compile Include="IRuleChecker.cs" />
     <Compile Include="LetterGenerator.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

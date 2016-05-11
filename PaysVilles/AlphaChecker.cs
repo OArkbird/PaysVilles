@@ -9,10 +9,12 @@ namespace PaysVilles
 {
     public class AlphaChecker
     {
+
         Regex alphabet = new Regex("[a-z,A-Z]");
  
        virtual public bool IsALetter(char letter)
         {
+            //Check if a given caracter is a letter
             if (alphabet.IsMatch(letter.ToString()))
            {
                return true;
