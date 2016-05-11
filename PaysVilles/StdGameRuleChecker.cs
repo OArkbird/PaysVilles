@@ -11,7 +11,6 @@ namespace PaysVilles
 {
     public class StdGameRuleChecker : GameRuleChecker
     {
-        
         //Constructors
         public StdGameRuleChecker():
             base()

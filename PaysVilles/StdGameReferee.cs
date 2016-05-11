@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace PaysVilles
 {
-    public class GameReferee
+    public class StdGameReferee: IGameReferee
     {
+        //Methods
         public int CalculateScore(Player myPlayer)
         {
             // Calculate the score of a player based on the answerList;

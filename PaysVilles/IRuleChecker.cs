@@ -9,6 +9,7 @@ namespace PaysVilles
 {
     public interface IRuleChecker
     {
+        //Methods
          bool CheckRule(char gameLetter, string word);
 
          bool CheckTheme(Thema myTheme, string word);

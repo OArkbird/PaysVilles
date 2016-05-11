@@ -9,6 +9,7 @@ namespace PaysVilles
 {
     abstract public class GameRuleChecker:IRuleChecker
     {
+       //Properties
        protected AlphaChecker alphaCheck;
        protected WordRepo wordRepo;
        protected ThemeRepo themeRepo;

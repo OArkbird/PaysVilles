@@ -5,14 +5,14 @@ using PaysVilles;
 namespace PaysVillesTest
 {
     [TestClass]
-    public class GameRefereeTest
+    public class StdGameRefereeTest
     {
         [TestMethod]
-        public void Test_GameReferee_ReturnsZero_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithNoAnswers()
+        public void Test_StdGameReferee_ReturnsZero_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithNoAnswers()
         {
             //Arrange
             Player myPlayer = new Player();
-            GameReferee referee = new GameReferee();
+            StdGameReferee referee = new StdGameReferee();
             //Act
             var testValue = referee.CalculateScore(myPlayer);
             //Assert
@@ -20,12 +20,12 @@ namespace PaysVillesTest
         }
 
         [TestMethod]
-        public void Test_GameReferee_Returns10_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithExactlyOneTenletterWordInhisAnswerList()
+        public void Test_StdGameReferee_Returns10_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithExactlyOneTenletterWordInhisAnswerList()
         {
             //Arrange
             Player myPlayer = new Player();
             myPlayer.AnswerList.Add("TenLetters");
-            GameReferee referee = new GameReferee();
+            StdGameReferee referee = new StdGameReferee();
             //Act
             var testValue = referee.CalculateScore(myPlayer);
             //Assert
@@ -33,13 +33,13 @@ namespace PaysVillesTest
         }
 
         [TestMethod]
-        public void Test_GameReferee_Returns20_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithExactlyTwoTenletterWordInhisAnswerList()
+        public void Test_StdGameReferee_Returns20_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithExactlyTwoTenletterWordInhisAnswerList()
         {
             //Arrange
             Player myPlayer = new Player();
             myPlayer.AnswerList.Add("TenLetters");
             myPlayer.AnswerList.Add("TenLetters");
-            GameReferee referee = new GameReferee();
+            StdGameReferee referee = new StdGameReferee();
             //Act
             var testValue = referee.CalculateScore(myPlayer);
             //Assert
@@ -47,13 +47,13 @@ namespace PaysVillesTest
         }
 
         [TestMethod]
-        public void Test_GameReferee_Returns16_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithExactlyOneTenletterWordAndExactlyOne6LetterWordInhisAnswerList()
+        public void Test_StdGameReferee_Returns16_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithExactlyOneTenletterWordAndExactlyOne6LetterWordInhisAnswerList()
         {
             //Arrange
             Player myPlayer = new Player();
             myPlayer.AnswerList.Add("TenLetters");
             myPlayer.AnswerList.Add("SixLet");
-            GameReferee referee = new GameReferee();
+            StdGameReferee referee = new StdGameReferee();
             //Act
             var testValue = referee.CalculateScore(myPlayer);
             //Assert
@@ -61,7 +61,7 @@ namespace PaysVillesTest
         }
 
         [TestMethod]
-        public void Test_GameReferee_Returns45_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithExactly5NineletterWordInhisAnswerList()
+        public void Test_StdGameReferee_Returns45_WhenCalculateScoreMethodIsCalled_GivenAPlayerWithExactly5NineletterWordInhisAnswerList()
         {
             //Arrange
             Player myPlayer = new Player();
@@ -70,7 +70,7 @@ namespace PaysVillesTest
             myPlayer.AnswerList.Add("NineLette");
             myPlayer.AnswerList.Add("NineLette");
             myPlayer.AnswerList.Add("NineLette");
-            GameReferee referee = new GameReferee();
+            StdGameReferee referee = new StdGameReferee();
             //Act
             var testValue = referee.CalculateScore(myPlayer);
             //Assert

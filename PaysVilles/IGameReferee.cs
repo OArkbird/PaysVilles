@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PaysVilles
 {
-    public interface ILetterGenerator
+    public interface IGameReferee
     {
-        string Generate();
+        int CalculateScore(Player myPlayer);
     }
 }
