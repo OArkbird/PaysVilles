@@ -1,0 +1,57 @@
+﻿<Page x:Class="PaysVilleApp.Views.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Background="#14b700"
+	Title="GamePage">
+
+    <Grid>
+        <Border BorderThickness="2,2,2,2"  Width="163" HorizontalAlignment="Left" >
+            <StackPanel Height="300" VerticalAlignment="Top" Width="150" >
+                <Border Height="50" Width="75" Margin="0,20,0,0" HorizontalAlignment="Right" CornerRadius="8,8,8,8" BorderThickness="1,1,1,1" BorderBrush="#f6de0f" Background="#f6de0f">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
+                    </Border.Effect>
+                    <TextBlock FontFamily="Berlin Sans FB" Foreground="white" TextWrapping="Wrap" Text="Time Left" Height="20" Width="50"/>
+                </Border>
+                <Border Height="50" Width="100" Margin="0,30,0,0" CornerRadius="8,8,8,8" BorderThickness="1,1,1,1" BorderBrush="#ff7b00" Background="#ff7b00">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
+                    </Border.Effect>
+                    <TextBlock FontFamily="Berlin Sans FB" Foreground="brown" TextWrapping="Wrap" Text="Current Theme" Height="20" Width="80"/>
+                </Border>
+                <Border Height="75" Width="100" Margin="0,30,30,0" CornerRadius="8,8,8,8" BorderThickness="1,1,1,1" BorderBrush="#129dff" Background="#129dff">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
+                    </Border.Effect>
+                    <TextBlock FontFamily="Berlin Sans FB" Foreground="white" TextWrapping="Wrap" Text="Game Info" Height="20" Width="60"/>
+                </Border>
+            </StackPanel>
+        </Border>
+        <Border BorderThickness="2,2,2,2"  Width="137" HorizontalAlignment="Right">
+            <StackPanel  Height="300" Margin="0,0,0,0" VerticalAlignment="Top" Width="137" HorizontalAlignment="Left" >
+                <Border Margin="0,30,0,0" CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#ff7b00" Background="#ff7b00" Width="120">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
+                    </Border.Effect>
+                    <Image Height="100" Width="110"/>
+                </Border>
+                <Border Width="120"  Margin="0,15,0,0"  CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#ff0036" Background="#ff0036">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
+                    </Border.Effect>
+                    <TextBox FontFamily="Berlin Sans FB" Height="23" TextWrapping="Wrap" Text="User Input" Foreground="White" Background="#ff0036"/>
+                </Border>
+                <Border Margin="0,5,0,0" Width="90" Height="60" CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#f6de0f" Background="#f6de0f" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
+                    </Border.Effect>
+                    <TextBlock FontFamily="Berlin Sans FB" TextWrapping="Wrap" Text="Input Info" Foreground="Brown" Width="55"/>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
