@@ -53,7 +53,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\ResultsPage.xaml.cs">
+      <DependentUpon>ResultsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThemePageIntro.xaml.cs">
+      <DependentUpon>ThemePageIntro.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GamePageIntro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -72,6 +82,9 @@
     <Compile Include="Views\GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GamePageIntro.xaml.cs">
+      <DependentUpon>GamePageIntro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\IntroPage.xaml.cs">
       <DependentUpon>IntroPage.xaml</DependentUpon>
     </Compile>
@@ -79,6 +92,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ResultsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ThemePageIntro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
