@@ -41,12 +41,15 @@
                     </Border.Effect>
                     <Image Height="100" Width="110"/>
                 </Border>
-                <Border Width="120"  Margin="0,15,0,0"  CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#ff0036" Background="#ff0036">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
-                    </Border.Effect>
-                    <TextBox FontFamily="Berlin Sans FB" Height="23" TextWrapping="Wrap" Text="User Input" Foreground="White" Background="#ff0036"/>
-                </Border>
+                <Grid Height="45" Margin="0,10,0,0">
+                    <Border Width="100"  Margin="0,5,30,5"  CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#ff0036" Background="#ff0036">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
+                        </Border.Effect>
+                        <TextBox FontFamily="Berlin Sans FB" Height="23" TextWrapping="Wrap" Text="User Input" Foreground="White" Background="#ff0036"/>
+                    </Border>
+                    <Button HorizontalAlignment="Right" Margin="0,5,5,0" FontFamily="Berlin Sans FB" Foreground="White" Content="Go" Background="#6743ff" Height="20" Width="25"></Button>
+                </Grid>
                 <Border Margin="0,5,0,0" Width="90" Height="60" CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#f6de0f" Background="#f6de0f" >
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
