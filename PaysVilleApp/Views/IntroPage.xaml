@@ -18,7 +18,7 @@
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
-                    <TextBlock Foreground="Brown" Width="300" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="PaysVilles" TextAlignment="Center" Background="#ff7b00" Margin="0,0,0,0" FontFamily="Berlin Sans FB" FontSize="18"/>
+                    <TextBlock Foreground="Brown" Width="300" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding GameTitle}" TextAlignment="Center" Background="#ff7b00" Margin="0,0,0,0" FontFamily="Berlin Sans FB" FontSize="18"/>
                 </Border>
             </StackPanel>
         </Border>
@@ -27,13 +27,13 @@
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <TextBlock Foreground="orange" TextWrapping="Wrap" Text="Start Game" TextAlignment="Center" Background="#ff1500" Margin="0,0,0,0" FontFamily="Berlin Sans FB"/>
+                <TextBlock Foreground="orange" TextWrapping="Wrap" Text="{Binding StartButton}" TextAlignment="Center" Background="#ff1500" Margin="0,0,0,0" FontFamily="Berlin Sans FB"/>
             </Border>
             <Border CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" BorderBrush="#ff1500" Margin="0,20,0,0">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <TextBlock Foreground="Orange" TextWrapping="Wrap" Text="Exit Game" TextAlignment="Center" Background="#ff1500" Margin="0,0,0,0" FontFamily="Berlin Sans FB"/>
+                <TextBlock Foreground="Orange" TextWrapping="Wrap" Text="{Binding ExitButton}" TextAlignment="Center" Background="#ff1500" Margin="0,0,0,0" FontFamily="Berlin Sans FB"/>
             </Border>
         </StackPanel>
     </Grid>

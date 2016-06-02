@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PVRepositories\PVRepositories.csproj">
-      <Project>{7692e3cb-d817-4697-b6ed-e433050653c1}</Project>
+      <Project>{4eca5c03-e7f0-4e3b-a5ee-f29786333e5b}</Project>
       <Name>PVRepositories</Name>
     </ProjectReference>
   </ItemGroup>

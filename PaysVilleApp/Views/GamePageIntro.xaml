@@ -63,7 +63,7 @@
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Background="#ff1500">
-                <TextBlock Text="Game Info"  Height="70" Background="#ff1500"></TextBlock>
+                <TextBlock Text="{Binding GameInfo}"  Height="70" Background="#ff1500"></TextBlock>
                 <Button FontFamily="Berlin Sans FB" Foreground="Brown" Content="Go" Background="gold" Height="20" Width="25"></Button>   
             </StackPanel>
         </Border>
