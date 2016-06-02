@@ -34,7 +34,7 @@ namespace PaysVilleApp.ViewModels
 
         }
 
-        int timeLeft = 0;
+        int timeLeft;
         public int TimeLeft
         {
             get { return timeLeft; }

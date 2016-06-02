@@ -16,7 +16,7 @@ namespace PaysVilleApp.ViewModels
             set { gameTitle = value; }
         }
 
-        private string startButton = "Pays - Villes";
+        private string startButton = "Start";
 
         public string StartButton
         {
@@ -24,7 +24,7 @@ namespace PaysVilleApp.ViewModels
             set { startButton = value; }
         }
 
-        private string exitButton = "Pays - Villes";
+        private string exitButton = "Exit";
 
         public string ExitButton
         {

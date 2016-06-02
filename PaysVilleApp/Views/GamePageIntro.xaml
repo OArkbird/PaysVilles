@@ -3,86 +3,105 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm ="clr-namespace:PaysVilleApp.ViewModels"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="320" d:DesignWidth="320"
       Background="#14b700"
 	Title="GamePageIntro">
-    
+    <Page.DataContext>
+        <vm:GamePageIntroViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Berlin Sans FB"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="8,8,8,8"/>
+            <Setter Property="BorderThickness" Value="3,3,3,3"/>
+        </Style>
+        <Style x:Key="TitleS" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+    </Page.Resources>
     <Grid>
-        <Border BorderThickness="2,2,2,2"  Width="163" HorizontalAlignment="Left" >
+        <Border Width="163" HorizontalAlignment="Left" >
             <StackPanel Height="300" VerticalAlignment="Top" Width="150" >
-                <Border HorizontalAlignment="Right" CornerRadius="8,8,8,8" BorderThickness="1,1,1,1" BorderBrush="#f6de0f" Background="#f6de0f" Width="75" Height="50" Margin="0,0,0,0">
+                <Border HorizontalAlignment="Right" CornerRadius="8,8,8,8" BorderBrush="#f6de0f" Background="#f6de0f" Width="75" Height="50" Margin="0,0,0,0">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel Width="80" HorizontalAlignment="Center">
-                        <TextBlock Margin ="0,0,0,0 " FontFamily="Berlin Sans FB" Foreground="white" TextWrapping="Wrap" Text="{Binding TimeLeftTitle}" Height="20" Width="50"/>
-                        <TextBlock FontFamily="Berlin Sans FB" Foreground="white" TextWrapping="Wrap" Text="{Binding TimeLeft}" Height="20" Width="50"/>
+                        <TextBlock Style="{StaticResource TitleS}" Margin ="0,0,0,0" Foreground="white" TextWrapping="Wrap" Text="{Binding TimeLeftTitle}" Height="20" Width="50"/>
+                        <TextBlock Foreground="white" TextWrapping="Wrap" Text="{Binding TimeLeft}" Height="20" Width="50"/>
                     </StackPanel>
                 </Border>
-                <Border Height="60" Width="100" Margin="0,30,0,0" CornerRadius="8,8,8,8" BorderThickness="1,1,1,1" BorderBrush="#ff7b00" Background="#ff7b00">
+                <Border Height="60" Width="100" Margin="0,30,0,0" BorderBrush="#ff7b00" Background="#ff7b00">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel  Width="110" HorizontalAlignment="Center">
-                        <TextBlock FontFamily="Berlin Sans FB" Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentThemeTitle}" Height="20" Width="80"/>
-                        <TextBlock FontFamily="Berlin Sans FB" Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentTheme}" Height="20" Width="80"/>   
+                        <TextBlock Style="{StaticResource TitleS}"  Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentThemeTitle}" Height="20" Width="80"/>
+                        <TextBlock  Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentTheme}" Height="20" Width="80"/>   
                     </StackPanel>
                 </Border>
-                <Border Height="75" Width="100" Margin="0,40,30,0" CornerRadius="8,8,8,8" BorderThickness="1,1,1,1" BorderBrush="#129dff" Background="#129dff">
+                <Border Height="75" Width="100" Margin="0,40,30,0" BorderBrush="#129dff" Background="#129dff">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock FontFamily="Berlin Sans FB" Foreground="white" TextWrapping="Wrap" Text="{Binding GameInfoTitle}" Height="20" Width="60"/>
-                        <TextBlock FontFamily="Berlin Sans FB" Foreground="white" TextWrapping="Wrap" Text="{Binding GameInfo}" Height="20" Width="60"/>
+                        <TextBlock Style="{StaticResource TitleS}" Foreground="white" TextWrapping="Wrap" Text="{Binding GameInfoTitle}" Height="20" Width="60"/>
+                        <TextBlock Foreground="white" TextWrapping="Wrap" Text="{Binding GameInfo}" Height="20" Width="60"/>
                     </StackPanel>
                 </Border>
                 
             </StackPanel>
         </Border>
-        <Border BorderThickness="2,2,2,2"  Width="137" HorizontalAlignment="Right">
+        <Border  Width="137" HorizontalAlignment="Right">
             <StackPanel  Height="300" Margin="0,0,0,0" VerticalAlignment="Top" Width="137" HorizontalAlignment="Left" >
-                <Border Margin="0,30,0,0" CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#ff7b00" Background="#ff7b00" Width="120">
+                <Border Margin="0,30,0,0"  BorderBrush="#ff7b00" Background="#ff7b00" Width="120">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock  FontFamily="Berlin Sans FB" Foreground="white" TextWrapping="Wrap" Text="{Binding ImageThemeTitle}" Height="20" Width="80"/>
+                        <TextBlock Style="{StaticResource TitleS}"  Foreground="white" TextWrapping="Wrap" Text="{Binding ImageThemeTitle}" Height="20" Width="80"/>
                         <Image Source="{Binding ImageTheme}" Height="100" Width="110"/>
                     </StackPanel>
                 </Border>
                 <Grid Height="60" Margin="0,10,0,0">
-                    <Border Height="50" Width="100"  Margin="0,5,30,5"  CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#ff0036" Background="#ff0036">
+                    <Border Height="50" Width="100"  Margin="0,5,30,5" BorderBrush="#ff0036" Background="#ff0036">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                         </Border.Effect>
                         <StackPanel>
-                            <TextBlock  FontSize="9" FontFamily="Berlin Sans FB" Foreground="white" TextWrapping="Wrap" Text="{Binding UserInputTitle}" Height="12" Width="70"/>
-                            <TextBox FontFamily="Berlin Sans FB" Height="20" TextWrapping="Wrap" Text="{Binding UserInput, Mode = OneWayToSource}" Foreground="White" Background="#ff0036"/>
+                            <TextBlock Style="{StaticResource TitleS}" Foreground="white" TextWrapping="Wrap" Text="{Binding UserInputTitle}" Height="12" Width="70"/>
+                            <TextBox  Height="20" TextWrapping="Wrap" Text="{Binding UserInput, Mode = OneWayToSource}" Foreground="White" Background="#ff0036"/>
                         </StackPanel>  
                     </Border>
-                    <Button HorizontalAlignment="Right" Margin="0,5,5,0" FontFamily="Berlin Sans FB" Foreground="White" Content="Go" Background="#6743ff" Height="20" Width="25"></Button>
+                    <Button HorizontalAlignment="Right" Margin="0,5,5,0" Foreground="White" Content="Go" Background="#6743ff" Height="20" Width="25"></Button>
                 </Grid>
-                <Border Margin="0,8,0,0" Width="90" Height="60" CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#f6de0f" Background="#f6de0f" >
+                <Border Margin="0,8,0,0" Width="90" Height="60" BorderBrush="#f6de0f" Background="#f6de0f" >
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock FontFamily="Berlin Sans FB" TextWrapping="Wrap" Text="{Binding InputInfoTitle}" Foreground="Brown" Width="55"/>
-                        <TextBlock FontFamily="Berlin Sans FB" TextWrapping="Wrap" Text="{Binding InputInfo}" Foreground="Brown" Width="55"/>
+                        <TextBlock Style="{StaticResource TitleS}" TextWrapping="Wrap" Text="{Binding InputInfoTitle}" Foreground="Brown" Width="55"/>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding InputInfo}" Foreground="Brown" Width="55"/>
                     </StackPanel>
                 </Border>
             </StackPanel>
         </Border>
-        <Border Width="130" Height="120" CornerRadius="8,8,8,8" BorderThickness="3,3,3,3" BorderBrush="#ff1500" Background="#f6de0f">
+        <Border Width="130" Height="120" BorderBrush="#ff1500" Background="#ff1500">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Background="#ff1500">
-                <TextBlock FontFamily="Berlin Sans FB" Foreground="White" HorizontalAlignment="Center" Text="{Binding GameInfoDisplayTitle}"  Height="20" Background="#ff1500"></TextBlock>
+                <TextBlock Foreground="White" Style="{StaticResource TitleS}" Text="{Binding GameInfoDisplayTitle}"  Height="20" Background="#ff1500"></TextBlock>
                 <TextBlock Text="{Binding GameInfoDisplay}"  Height="70" Background="#ff1500"></TextBlock>
-                <Button FontFamily="Berlin Sans FB" Foreground="Brown" Content="Go" Background="gold" Height="20" Width="25"></Button>   
+                <Button  Foreground="Brown" Content="Go" Background="gold" Height="20" Width="25"></Button>   
             </StackPanel>
         </Border>
     </Grid>

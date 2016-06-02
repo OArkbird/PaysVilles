@@ -18,7 +18,7 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        private string resultsTitle;
+        private string resultsTitle = "Game Results";
         public string ResultsTitle
         {
             get { return resultsTitle; }

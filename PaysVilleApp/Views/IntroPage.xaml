@@ -3,13 +3,31 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm ="clr-namespace:PaysVilleApp.ViewModels"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="320" d:DesignWidth="320"
      Background="#14b700"
 	Title="IntroPage">
-
+    
+    <Page.DataContext>
+        <vm:IntroPageViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <Style x:Key="TextBlockS" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Berlin Sans FB"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Orange"/>
+            <Setter Property="Background" Value="#ff1500"/>
+        </Style>
+        
+        <Style TargetType="Border">
+            <Setter Property="Background" Value="#ff1500"/>
+        </Style>
+    </Page.Resources>
     <Grid Margin="0,0,0,0">
-        <Border CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" BorderBrush="#129dff" Margin="0,30,0,0" Height="108" VerticalAlignment="Top">
+
+        <Border CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" Background="#129dff" BorderBrush="#129dff" Margin="0,30,0,0" Height="108" VerticalAlignment="Top">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
             </Border.Effect>
@@ -27,13 +45,13 @@
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <TextBlock Foreground="orange" TextWrapping="Wrap" Text="{Binding StartButton}" TextAlignment="Center" Background="#ff1500" Margin="0,0,0,0" FontFamily="Berlin Sans FB"/>
+                <TextBlock Text="{Binding StartButton}" Style ="{StaticResource TextBlockS}"/>
             </Border>
             <Border CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" BorderBrush="#ff1500" Margin="0,20,0,0">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <TextBlock Foreground="Orange" TextWrapping="Wrap" Text="{Binding ExitButton}" TextAlignment="Center" Background="#ff1500" Margin="0,0,0,0" FontFamily="Berlin Sans FB"/>
+                <TextBlock Text="{Binding ExitButton}" Style ="{StaticResource TextBlockS}"/>
             </Border>
         </StackPanel>
     </Grid>
