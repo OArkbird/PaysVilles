@@ -10,17 +10,51 @@ namespace PaysVilleApp.ViewModels
 {
     public class ThemePageIntroViewModel: INotifyPropertyChanged
     {
+        private string gameInfo = "";
+        public string GameInfo
+        {
+            get { return gameInfo; }
+            set
+            {
+                gameInfo = value;
+                onPropertyChanged("GameInfo");
+            }
+
+        }
+
+        private string gameInfoTitle = "";
+        public string GameInfoTitle
+        {
+            get { return gameInfoTitle; }
+            set
+            {
+                gameInfoTitle = value;
+                onPropertyChanged("GameInfo");
+            }
+
+        }
+
         int timeLeft = 0;
         public int TimeLeft
         {
             get { return timeLeft; }
             set
-            { 
+            {
                 timeLeft = value;
             }
         }
 
-        string currentTheme ="";
+        string timeLeftTitle = "";
+        public string TimeLeftTitle
+        {
+            get { return timeLeftTitle; }
+            set
+            {
+                timeLeftTitle = value;
+            }
+        }
+
+        string currentTheme = "";
         public string CurrentTheme
         {
             get { return currentTheme; }
@@ -30,23 +64,43 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string gameInfo = "";
-        public string GameInfo
+        string currentThemeTitle = "";
+        public string CurrentThemeTitle
         {
-            get{ return gameInfo; }
+            get { return currentThemeTitle; }
             set
             {
-                gameInfo = value;
+                currentThemeTitle = value;
             }
         }
 
-        string theme = "";
-        public string Theme
+        string themeInfoDisplay = "";
+        public string ThemeInfoDisplay
         {
-            get{ return theme; }
+            get { return themeInfoDisplay; }
             set
             {
-                theme = value;
+                themeInfoDisplay = value;
+            }
+        }
+
+        string themeInfoDisplayTitle = "";
+        public string ThemeInfoDisplayTitle
+        {
+            get { return themeInfoDisplayTitle; }
+            set
+            {
+                themeInfoDisplayTitle = value;
+            }
+        }
+
+        string themeTitle = "";
+        public string ThemeTitle
+        {
+            get { return themeTitle; }
+            set
+            {
+                themeTitle = value;
             }
         }
 
@@ -60,23 +114,53 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
+        string inputInfoTitle = "";
+        public string InputInfoTitle
+        {
+            get { return inputInfoTitle; }
+            set
+            {
+                inputInfoTitle = value;
+            }
+        }
+
         string themeImage = "";
         public string ThemeImage
         {
-            get{ return themeImage; }
+            get { return themeImage; }
             set
             {
                 themeImage = value;
             }
         }
 
+        string themeImageTitle = "";
+        public string ThemeImageTitle
+        {
+            get { return themeImageTitle; }
+            set
+            {
+                themeImageTitle = value;
+            }
+        }
+
         string userInput = "";
         public string UserInput
         {
-            get{ return userInput; }
+            get { return userInput; }
             set
             {
                 userInput = value;
+            }
+        }
+
+        string userInputTitle = "";
+        public string UserInputTitle
+        {
+            get { return userInputTitle; }
+            set
+            {
+                userInputTitle = value;
             }
         }
 

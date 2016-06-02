@@ -8,5 +8,24 @@ namespace PaysVilleApp.ViewModels
 {
     public class ResultPageViewModel
     {
+        private string results;
+        public string Results 
+        {
+            get { return results; }
+            set 
+            {
+                results = value;
+            }
+        }
+
+        private string resultsTitle;
+        public string ResultsTitle
+        {
+            get { return resultsTitle; }
+            set
+            {
+                resultsTitle = value;
+            }
+        }
     }
 }

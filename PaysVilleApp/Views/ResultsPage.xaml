@@ -9,13 +9,15 @@
 	Title="ResultsPage">
 
     <Grid Margin="0,0,0,0">
-        <Border CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" BorderBrush="#ff7b00" Margin="10,60,10,0" Height="150" VerticalAlignment="Top">
+        <Border Background="#ff7b00" CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" BorderBrush="#ff7b00" Margin="10,60,10,0" Height="150" VerticalAlignment="Top">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
             </Border.Effect>
-            <TextBlock Text="Results" Background="#ff7b00">
-                
-            </TextBlock>
+            <StackPanel>
+                <TextBlock Text="{Binding ResultsTitle}" Background="#ff7b00"/>
+                <TextBlock Text="{Binding Results}" Background="#ff7b00"/>
+            </StackPanel>    
+            
             
         </Border>
     </Grid>
