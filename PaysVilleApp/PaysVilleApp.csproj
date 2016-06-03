@@ -53,9 +53,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command.cs" />
     <Compile Include="ViewModels\GamePageIntroViewModel.cs" />
     <Compile Include="ViewModels\GamePageViewModel.cs" />
     <Compile Include="ViewModels\IntroPageViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ResultPageViewModel.cs" />
     <Compile Include="ViewModels\ThemePageIntroViewModel.cs" />
     <Compile Include="Views\ResultsPage.xaml.cs">

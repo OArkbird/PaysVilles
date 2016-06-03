@@ -13,12 +13,15 @@
         <vm:IntroPageViewModel/>
     </Page.DataContext>
     <Page.Resources>
-        <Style x:Key="TextBlockS" TargetType="TextBlock">
+        <Style x:Key="ButtonS" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="FontFamily" Value="Berlin Sans FB"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Foreground" Value="Orange"/>
             <Setter Property="Background" Value="#ff1500"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="100"/>
+            
         </Style>
         
         <Style TargetType="Border">
@@ -45,13 +48,13 @@
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <TextBlock Text="{Binding StartButton}" Style ="{StaticResource TextBlockS}"/>
+                <Button Style="{StaticResource ButtonS}" Content="{Binding StartButton}" Command="{Binding GoToGamePageCommand}"/>
             </Border>
             <Border CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" BorderBrush="#ff1500" Margin="0,20,0,0">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <TextBlock Text="{Binding ExitButton}" Style ="{StaticResource TextBlockS}"/>
+                <Button Style="{StaticResource ButtonS}" Content="{Binding ExitButton}"/>
             </Border>
         </StackPanel>
     </Grid>

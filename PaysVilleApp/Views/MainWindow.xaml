@@ -1,8 +1,17 @@
 ﻿<Window x:Class="PaysVilleApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:vm="clr-namespace:PaysVilleApp.ViewModels"
+        MinHeight="380"
+        MinWidth="380"
+        MaxHeight="380"
+        MaxWidth="380"
+        
         Title="MainWindow" Height="350" Width="525">
         
-    <Frame x:Name="MainFrame" Source="IntroPage.xaml" NavigationUIVisibility="Hidden"/>
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Frame x:Name="MainFrame" Source="{Binding DisplayedPage}" NavigationUIVisibility="Hidden"/>
     
 </Window>

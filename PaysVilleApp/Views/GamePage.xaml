@@ -28,8 +28,8 @@
         </Style>
     </Page.Resources>
     <Grid>
-        <Border BorderThickness="2,2,2,2"  Width="163" HorizontalAlignment="Left" >
-            <StackPanel Height="300" VerticalAlignment="Top" Width="150" >
+        <Border BorderThickness="2,2,2,2"  Width="163" Margin="0,0,115,0">
+            <StackPanel Height="300" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0">
                 <Border HorizontalAlignment="Right" BorderBrush="#f6de0f" Background="#f6de0f" Width="75" Height="50" Margin="0,0,0,0">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
@@ -60,8 +60,8 @@
 
             </StackPanel>
         </Border>
-        <Border BorderThickness="2,2,2,2"  Width="137" HorizontalAlignment="Right">
-            <StackPanel  Height="300" Margin="0,0,0,0" VerticalAlignment="Top" Width="137" HorizontalAlignment="Left" >
+        <Border BorderThickness="2,2,2,2"  Margin="190,0,0,0"  Width="137" HorizontalAlignment="Center">
+            <StackPanel Height="300" Margin="0,0,0,0" VerticalAlignment="Top" Width="137" >
                 <Border Margin="0,30,0,0" BorderBrush="#ff7b00" Background="#ff7b00" Width="120">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
