@@ -48,7 +48,7 @@
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <Button Style="{StaticResource ButtonS}" Content="{Binding StartButton}" Command="{Binding GoToGamePageCommand}"/>
+                <Button Style="{StaticResource ButtonS}" Content="{Binding StartButton}" Command="{Binding GoToGameIntroPageCommand}"/>
             </Border>
             <Border CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" BorderBrush="#ff1500" Margin="0,20,0,0">
                 <Border.Effect>

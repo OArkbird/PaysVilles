@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace PaysVilleApp.ViewModels
 {
@@ -164,6 +165,29 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
+         //Commands
+
+        public ICommand GoToGamePageCommand { get; set; }
+        
+        //Constructors
+
+        public ThemePageIntroViewModel() 
+        {
+            GoToGamePageCommand = new Command(ExecuteGoToGamePageCommand,CanExecuteGoToGamePageCommand);
+        }
+
+        //Methods
+
+        public bool CanExecuteGoToGamePageCommand() 
+        {
+            return true;
+        }
+
+        public void ExecuteGoToGamePageCommand() 
+        {
+            MainWindowViewModel mainWindow = (MainWindowViewModel) App.Current.MainWindow.DataContext;
+            mainWindow.DisplayedPage = "GamePage.xaml";
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

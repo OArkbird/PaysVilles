@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace PaysVilleApp.ViewModels
 {
@@ -161,6 +162,30 @@ namespace PaysVilleApp.ViewModels
             {
                 userInputTitle = value;
             }
+        }
+
+        //Commands
+
+        public ICommand GoToThemePageIntroCommand { get; set; }
+        
+        //Constructors
+
+        public GamePageIntroViewModel() 
+        {
+            GoToThemePageIntroCommand = new Command(ExecuteGoToThemePageIntroCommand,CanExecuteGoToThemePageIntroCommand);
+        }
+
+        //Methods
+
+        public bool CanExecuteGoToThemePageIntroCommand() 
+        {
+            return true;
+        }
+
+        public void ExecuteGoToThemePageIntroCommand() 
+        {
+            MainWindowViewModel mainWindow = (MainWindowViewModel) App.Current.MainWindow.DataContext;
+            mainWindow.DisplayedPage = "ThemePageIntro.xaml";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

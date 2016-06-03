@@ -17,7 +17,7 @@ namespace PaysVilleApp.ViewModels
 
         public IntroPageViewModel() 
         {
-            GoToGamePageCommand = new Command(ExecuteGoToGamePageCommand,CanExecuteGoToGamePageCommad);
+            GoToGameIntroPageCommand = new Command(ExecuteGoToGameIntroPageCommand,CanExecuteGoToGameIntroPageCommad);
         }
 
         //Properties
@@ -48,24 +48,20 @@ namespace PaysVilleApp.ViewModels
 
         //Commands
 
-        public ICommand GoToGamePageCommand { get; set; }
+        public ICommand GoToGameIntroPageCommand { get; set; }
 
         //Methods
 
-        public bool CanExecuteGoToGamePageCommad() 
+        public bool CanExecuteGoToGameIntroPageCommad() 
         {
             return true;
         }
 
-        public void ExecuteGoToGamePageCommand()
+        public void ExecuteGoToGameIntroPageCommand()
         {
             var mainWindow =  App.Current.MainWindow.DataContext as MainWindowViewModel;
-            mainWindow.DisplayedPage = "GamePage.xaml";
+            mainWindow.DisplayedPage = "GamePageIntro.xaml";
         }
 
-
-
-
-        public ICommand RelayCommand { get; set; }
     }
 }

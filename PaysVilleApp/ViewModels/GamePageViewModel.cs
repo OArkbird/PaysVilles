@@ -143,6 +143,21 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
+        //Constructors
+
+        //Methods
+
+        public bool CanExecuteGoToGamePageCommand()
+        {
+            return true;
+        }
+
+        public void ExecuteGoToGamePageCommand()
+        {
+            MainWindowViewModel mainWindow = (MainWindowViewModel)App.Current.MainWindow.DataContext;
+            mainWindow.DisplayedPage = "ThemePageIntro.xaml";
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void onPropertyChanged(string propertyName)

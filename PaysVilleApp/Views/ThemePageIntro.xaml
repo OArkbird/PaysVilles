@@ -101,7 +101,7 @@
             <StackPanel Background="#6743ff">
                 <TextBlock Style="{StaticResource TitleS}" Margin="0,1,0,0" Text="{Binding ThemeInfoDisplayTitle}" Width="50" Height="12" Background="#6743ff"/>
                 <TextBlock Margin="0,0,0,0" Text="{Binding ThemeInfoDisplay}" Width="50" Height="17" Background="#6743ff"></TextBlock>
-                <Button Margin="0,3,0,0" Foreground="Black" Content="Go" Background="#0080ff" Height="20" Width="25"></Button>
+                <Button Command="{Binding GoToGamePageCommand}" Margin="0,3,0,0" Foreground="Black" Content="Go" Background="#0080ff" Height="20" Width="25" Click="Button_Click"></Button>
             </StackPanel>
         </Border>
     </Grid>
