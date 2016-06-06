@@ -143,19 +143,27 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
+        //Command
+
+        public Command GoToResultsPageCommand{get;set;}
+
         //Constructors
+        public GamePageViewModel() 
+        {
+            GoToResultsPageCommand = new Command(ExecuteGoToResultsPageCommand, CanExecuteGoToResultsPageCommand);
+        }
 
         //Methods
 
-        public bool CanExecuteGoToGamePageCommand()
+        public bool CanExecuteGoToResultsPageCommand()
         {
             return true;
         }
 
-        public void ExecuteGoToGamePageCommand()
+        public void ExecuteGoToResultsPageCommand()
         {
             MainWindowViewModel mainWindow = (MainWindowViewModel)App.Current.MainWindow.DataContext;
-            mainWindow.DisplayedPage = "ThemePageIntro.xaml";
+            mainWindow.DisplayedPage = "ResultsPage.xaml";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

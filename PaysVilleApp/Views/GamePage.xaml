@@ -28,8 +28,8 @@
         </Style>
     </Page.Resources>
     <Grid>
-        <Border BorderThickness="2,2,2,2"  Width="163" Margin="0,0,115,0">
-            <StackPanel Height="300" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0">
+        <Border Width="163" HorizontalAlignment="Left">
+            <StackPanel  Width="150" Height="300" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0">
                 <Border HorizontalAlignment="Right" BorderBrush="#f6de0f" Background="#f6de0f" Width="75" Height="50" Margin="0,0,0,0">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
@@ -60,8 +60,8 @@
 
             </StackPanel>
         </Border>
-        <Border BorderThickness="2,2,2,2"  Margin="190,0,0,0"  Width="137" HorizontalAlignment="Center">
-            <StackPanel Height="300" Margin="0,0,0,0" VerticalAlignment="Top" Width="137" >
+        <Border Width="137" HorizontalAlignment="Right">
+            <StackPanel Height="300" Margin="0,0,0,0" VerticalAlignment="Top" Width="137" HorizontalAlignment="Left" >
                 <Border Margin="0,30,0,0" BorderBrush="#ff7b00" Background="#ff7b00" Width="120">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
@@ -81,7 +81,7 @@
                             <TextBox Height="20" TextWrapping="Wrap" Text="{Binding UserInput, Mode = OneWayToSource}" Foreground="White" Background="#ff0036"/>
                         </StackPanel>
                     </Border>
-                    <Button HorizontalAlignment="Right" Margin="0,5,5,0" Foreground="White" Content="Go" Background="#6743ff" Height="20" Width="25"></Button>
+                    <Button Command="{Binding GoToResultsPageCommand}"  HorizontalAlignment="Right" Margin="0,5,5,0" Foreground="White" Content="Go" Background="#6743ff" Height="20" Width="25"></Button>
                 </Grid>
                 <Border Margin="0,8,0,0" Width="90" Height="60" BorderBrush="#f6de0f" Background="#f6de0f" >
                     <Border.Effect>
@@ -94,6 +94,5 @@
                 </Border>
             </StackPanel>
         </Border>
-        
     </Grid>
 </Page>

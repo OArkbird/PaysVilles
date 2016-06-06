@@ -8,6 +8,8 @@ namespace PaysVilleApp.ViewModels
 {
     public class ResultPageViewModel
     {
+        //Properties
+
         private string results;
         public string Results 
         {
@@ -27,5 +29,40 @@ namespace PaysVilleApp.ViewModels
                 resultsTitle = value;
             }
         }
+
+        private string endOfGameButton = "End Game";
+        public string EndOfGameButton
+        {
+            get { return endOfGameButton; }
+            set
+            {
+                endOfGameButton = value;
+            }
+        }
+
+        //Commands
+
+        public Command GoToIntroPageCommand { get; set; }
+
+        //Constructors
+
+        public ResultPageViewModel() 
+        {
+            GoToIntroPageCommand = new Command(ExecuteGoToIntroPageCommand,CanExecuteGoToIntroPageCommand);
+        }
+
+        //Methods
+
+        public bool CanExecuteGoToIntroPageCommand() 
+        {
+            return true;
+        }
+
+        public void ExecuteGoToIntroPageCommand() 
+        {
+            MainWindowViewModel mainWindow = (MainWindowViewModel) App.Current.MainWindow.DataContext;
+            mainWindow.DisplayedPage = "IntroPage.xaml";
+        }
+
     }
 }
