@@ -21,7 +21,7 @@ namespace PaysVilleApp.ViewModels
 
         }
 
-        private string gameInfoTitle = "";
+        private string gameInfoTitle = "Game information";
         public string GameInfoTitle
         {
             get { return gameInfoTitle; }
@@ -43,7 +43,7 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string timeLeftTitle = "";
+        string timeLeftTitle = "Time left";
         public string TimeLeftTitle
         {
             get { return timeLeftTitle; }
@@ -63,23 +63,13 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string currentThemeTitle = "";
+        string currentThemeTitle = "Current theme";
         public string CurrentThemeTitle
         {
             get { return currentThemeTitle; }
             set
             {
                 currentThemeTitle = value;
-            }
-        }
-
-        string themeTitle = "";
-        public string ThemeTitle
-        {
-            get { return themeTitle; }
-            set
-            {
-                themeTitle = value;
             }
         }
 
@@ -93,7 +83,7 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string inputInfoTitle = "";
+        string inputInfoTitle = "Warning";
         public string InputInfoTitle
         {
             get { return inputInfoTitle; }
@@ -113,7 +103,7 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string themeImageTitle = "";
+        string themeImageTitle = "Theme";
         public string ThemeImageTitle
         {
             get { return themeImageTitle; }
@@ -133,7 +123,7 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string userInputTitle = "";
+        string userInputTitle = "Type your word";
         public string UserInputTitle
         {
             get { return userInputTitle; }

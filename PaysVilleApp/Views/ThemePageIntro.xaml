@@ -53,7 +53,7 @@
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock Style="{StaticResource TitleS}" Foreground="white" TextWrapping="Wrap" Text="{Binding GameInfoTitle}" Height="20" Width="60"/>
+                        <TextBlock Style="{StaticResource TitleS}" Foreground="white" TextWrapping="Wrap" Text="{Binding GameInfoTitle}" Height="20" Width="80"/>
                         <TextBlock Foreground="white" TextWrapping="Wrap" Text="{Binding GameInfo}" Height="20" Width="60"/>
                     </StackPanel>
                 </Border>
@@ -67,7 +67,7 @@
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock Style="{StaticResource TitleS}" Foreground="white" TextWrapping="Wrap" Text="{Binding ImageThemeTitle}" Height="20" Width="80"/>
+                        <TextBlock Style="{StaticResource TitleS}" Foreground="white" TextWrapping="Wrap" Text="{Binding ThemeImageTitle}" Height="20" Width="80"/>
                         <Image Source="{Binding ImageTheme}" Height="100" Width="110"/>
                     </StackPanel>
                 </Border>

@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace PaysVilleApp.ViewModels
 {
-    public class GamePageIntroViewModel: INotifyPropertyChanged
+    public class PhaseIntroPageViewModel
     {
         private string gameInfo = "";
         public string GameInfo
@@ -158,7 +158,7 @@ namespace PaysVilleApp.ViewModels
 
         //Game info box Form properties
 
-        string gameInfoDisplayLabelOne = "Players:";
+        string gameInfoDisplayLabelOne = "Game:";
         public string GameInfoDisplayLabelOne
         {
             get { return gameInfoDisplayLabelOne; }
@@ -179,7 +179,7 @@ namespace PaysVilleApp.ViewModels
         }
 
 
-        string gameInfoDisplayLabelTwo = "Game:";
+        string gameInfoDisplayLabelTwo = "Players:";
         public string GameInfoDisplayLabelTwo
         {
             get { return gameInfoDisplayLabelTwo; }
@@ -199,7 +199,7 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string gameInfoDisplayLabelThree = "Game description:";
+        string gameInfoDisplayLabelThree = "Phase:";
         public string GameInfoDisplayLabelThree
         {
             get { return gameInfoDisplayLabelThree; }
@@ -219,7 +219,7 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string gameInfoDisplayLabelFour = "";
+        string gameInfoDisplayLabelFour = "Chronometre:";
         public string GameInfoDisplayLabelFour
         {
             get { return gameInfoDisplayLabelFour; }
@@ -239,7 +239,7 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        string gameInfoDisplayLabelFive = "";
+        string gameInfoDisplayLabelFive = "Game letter:";
         public string GameInfoDisplayLabelFive
         {
             get { return gameInfoDisplayLabelFive; }
@@ -265,7 +265,7 @@ namespace PaysVilleApp.ViewModels
         
         //Constructors
 
-        public GamePageIntroViewModel() 
+        public PhaseIntroPageViewModel() 
         {
             GoToThemePageIntroCommand = new Command(ExecuteGoToThemePageIntroCommand,CanExecuteGoToThemePageIntroCommand);
         }

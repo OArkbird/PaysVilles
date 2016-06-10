@@ -1,15 +1,15 @@
-﻿<Page x:Class="PaysVilleApp.Views.GamePageIntro"
+﻿<Page x:Class="PaysVilleApp.Views.PhaseIntroPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:vm ="clr-namespace:PaysVilleApp.ViewModels"
+      xmlns:vm="clr-namespace:PaysVilleApp.ViewModels"
       mc:Ignorable="d" 
-      d:DesignHeight="320" d:DesignWidth="320"
       Background="#14b700"
-	Title="GamePageIntro">
+      d:DesignHeight="320" d:DesignWidth="320"
+	Title="PhaseIntroPage">
     <Page.DataContext>
-        <vm:GamePageIntroViewModel/>
+        <vm:PhaseIntroPageViewModel/>
     </Page.DataContext>
     <Page.Resources>
         <Style TargetType="TextBlock">
@@ -46,7 +46,7 @@
                     </Border.Effect>
                     <StackPanel  Width="110" HorizontalAlignment="Center">
                         <TextBlock Style="{StaticResource TitleS}"  Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentThemeTitle}" Height="20" Width="80"/>
-                        <TextBlock  Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentTheme}" Height="20" Width="80"/>   
+                        <TextBlock  Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentTheme}" Height="20" Width="80"/>
                     </StackPanel>
                 </Border>
                 <Border Height="75" Width="100" Margin="0,40,30,0" BorderBrush="#129dff" Background="#129dff">
@@ -58,7 +58,7 @@
                         <TextBlock Foreground="white" TextWrapping="Wrap" Text="{Binding GameInfo}" Height="20" Width="60"/>
                     </StackPanel>
                 </Border>
-                
+
             </StackPanel>
         </Border>
         <Border  Width="137" HorizontalAlignment="Right">
@@ -80,7 +80,7 @@
                         <StackPanel>
                             <TextBlock Style="{StaticResource TitleS}" Foreground="white" TextWrapping="Wrap" Text="{Binding UserInputTitle}" Height="12" Width="70"/>
                             <TextBox  Height="20" TextWrapping="Wrap" Text="{Binding UserInput, Mode = OneWayToSource}" Foreground="White" Background="#ff0036"/>
-                        </StackPanel>  
+                        </StackPanel>
                     </Border>
                     <Button HorizontalAlignment="Right" Margin="0,5,5,0" Foreground="White" Content="Go" Background="#6743ff" Height="20" Width="25"></Button>
                 </Grid>
@@ -95,18 +95,20 @@
                 </Border>
             </StackPanel>
         </Border>
-        <Border Width="170" Height="130" BorderBrush="#ff1500" Background="#ff1500">
+        <Border Width="170" Height="130" BorderBrush="#00cbe6" Background="#ff1500">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
             </Border.Effect>
-            <StackPanel Background="#ff1500">
+            <StackPanel Background="#00cbe6">
                 <TextBlock Foreground="White" Style="{StaticResource TitleS}" Text="{Binding GameInfoDisplayTitle}"  Height="20" Background="#ff1500"></TextBlock>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="15"/>
                         <RowDefinition Height="15"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>    
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="15"/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
@@ -122,11 +124,8 @@
                     <TextBlock Foreground="#e2ff1f" Text="{Binding GameInfoDisplayLabelThreeContent}" Grid.Column="1" Grid.Row="2"/>
                     <TextBlock Foreground="#e2ff1f" Text="{Binding GameInfoDisplayLabelFourContent}" Grid.Column="1" Grid.Row="3"/>
                     <TextBlock Foreground="#e2ff1f" Text="{Binding GameInfoDisplayLabelFiveContent}" Grid.Column="1" Grid.Row="4"/>
-
-
-
                 </Grid>
-                <Button  Margin="0,5,0,0"  Foreground="Brown" Content="Go" Background="gold" Height="20" Width="25" Command="{Binding GoToThemePageIntroCommand}"></Button>   
+                <Button  Margin="0,5,0,0"  Foreground="Brown" Content="Go" Background="gold" Height="20" Width="25" Command="{Binding GoToThemePageIntroCommand}"></Button>
             </StackPanel>
         </Border>
     </Grid>
