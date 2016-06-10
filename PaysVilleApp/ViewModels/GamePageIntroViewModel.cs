@@ -261,26 +261,26 @@ namespace PaysVilleApp.ViewModels
 
         //Commands
 
-        public ICommand GoToThemePageIntroCommand { get; set; }
+        public ICommand GoToPhaseStartPageCommand { get; set; }
         
         //Constructors
 
         public GamePageIntroViewModel() 
         {
-            GoToThemePageIntroCommand = new Command(ExecuteGoToThemePageIntroCommand,CanExecuteGoToThemePageIntroCommand);
+            GoToPhaseStartPageCommand = new Command(ExecuteGoToPhaseStartPageCommand, CanExecuteGoToPhaseStartPageCommand);
         }
 
         //Methods
 
-        public bool CanExecuteGoToThemePageIntroCommand() 
+        public bool CanExecuteGoToPhaseStartPageCommand() 
         {
             return true;
         }
 
-        public void ExecuteGoToThemePageIntroCommand() 
+        public void ExecuteGoToPhaseStartPageCommand() 
         {
             MainWindowViewModel mainWindow = (MainWindowViewModel) App.Current.MainWindow.DataContext;
-            mainWindow.DisplayedPage = "ThemePageIntro.xaml";
+            mainWindow.DisplayedPage = "PhaseStartPage.xaml";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

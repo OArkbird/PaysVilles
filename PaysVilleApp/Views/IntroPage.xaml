@@ -16,12 +16,11 @@
         <Style x:Key="ButtonS" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="FontFamily" Value="Berlin Sans FB"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Foreground" Value="Orange"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="#ff1500"/>
             <Setter Property="Height" Value="20"/>
             <Setter Property="Width" Value="100"/>
-            
         </Style>
         
         <Style TargetType="Border">
@@ -39,7 +38,7 @@
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
-                    <TextBlock Foreground="Brown" Width="300" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding GameTitle}" TextAlignment="Center" Background="#ff7b00" Margin="0,0,0,0" FontFamily="Berlin Sans FB" FontSize="18"/>
+                    <TextBlock Foreground="White" Width="300" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding GameTitle}" TextAlignment="Center" Background="#ff7b00" Margin="0,0,0,0" FontFamily="Berlin Sans FB" FontSize="18"/>
                 </Border>
             </StackPanel>
         </Border>
@@ -48,13 +47,13 @@
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <Button Style="{StaticResource ButtonS}" Content="{Binding StartButton}" Command="{Binding GoToGameIntroPageCommand}"/>
+                <Button Style="{StaticResource ButtonS}" Content="{Binding StartButton}" Command="{Binding GoToGameIntroPageCommand}" HorizontalAlignment="Left" Margin="6,0,0,0"/>
             </Border>
             <Border CornerRadius="8,8,8,8" BorderThickness="4,4,4,4" BorderBrush="#ff1500" Margin="0,20,0,0">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                 </Border.Effect>
-                <Button Style="{StaticResource ButtonS}" Content="{Binding ExitButton}"/>
+                <Button Command="{Binding ExitCommand}" Style="{StaticResource ButtonS}" Content="{Binding ExitButton}"/>
             </Border>
         </StackPanel>
     </Grid>

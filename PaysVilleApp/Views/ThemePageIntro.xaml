@@ -25,6 +25,7 @@
             <Setter Property="TextDecorations" Value="Underline"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
     </Page.Resources>
     <Grid>
@@ -44,7 +45,7 @@
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel  Width="110" HorizontalAlignment="Center">
-                        <TextBlock Style="{StaticResource TitleS}" Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentThemeTitle}" Height="20" Width="80"/>
+                        <TextBlock Style="{StaticResource TitleS}" Foreground="white" TextWrapping="Wrap" Text="{Binding CurrentThemeTitle}" Height="20" Width="80"/>
                         <TextBlock Foreground="brown" TextWrapping="Wrap" Text="{Binding CurrentTheme}" Height="20" Width="80"/>
                     </StackPanel>
                 </Border>
@@ -81,14 +82,14 @@
                             <TextBox Height="20" TextWrapping="Wrap" Text="{Binding UserInput, Mode = OneWayToSource}" Foreground="White" Background="#ff0036"/>
                         </StackPanel>
                     </Border>
-                    <Button HorizontalAlignment="Right" Margin="0,5,5,0" Foreground="White" Content="Go" Background="#6743ff" Height="20" Width="25"></Button>
+                    <Button HorizontalAlignment="Right" Margin="0,5,5,0" Foreground="White" Content="Go" Background="#129dff" Height="20" Width="25"></Button>
                 </Grid>
                 <Border Margin="0,8,0,0" Width="90" Height="60" BorderBrush="#f6de0f" Background="#f6de0f" >
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
                     </Border.Effect>
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock Style="{StaticResource TitleS}" TextWrapping="Wrap" Text="{Binding InputInfoTitle}" Foreground="Brown" Width="55"/>
+                        <TextBlock Style="{StaticResource TitleS}" TextWrapping="Wrap" Text="{Binding InputInfoTitle}" Foreground="white" Width="55"/>
                         <TextBlock TextWrapping="Wrap" Text="{Binding InputInfo}" Foreground="Brown" Width="55"/>
                     </StackPanel>
                 </Border>
@@ -99,9 +100,9 @@
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Background="#6743ff">
-                <TextBlock Style="{StaticResource TitleS}" Margin="0,1,0,0" Text="{Binding ThemeInfoDisplayTitle}" Width="50" Height="12" Background="#6743ff"/>
+                <TextBlock Style="{StaticResource TitleS}" Margin="0,1,0,0" Text="{Binding ThemeInfoDisplayTitle}" Width="55" Height="12" Background="#6743ff" Foreground="White"/>
                 <TextBlock Margin="0,0,0,0" Text="{Binding ThemeInfoDisplay}" Width="50" Height="17" Background="#6743ff"></TextBlock>
-                <Button Command="{Binding GoToGamePageCommand}" Margin="0,3,0,0" Foreground="Black" Content="Go" Background="#0080ff" Height="20" Width="25" Click="Button_Click"></Button>
+                <Button Command="{Binding GoToGamePageCommand}" Margin="0,3,0,0" Foreground="white" Content="Go" Background="#0080ff" Height="20" Width="25" Click="Button_Click"></Button>
             </StackPanel>
         </Border>
     </Grid>

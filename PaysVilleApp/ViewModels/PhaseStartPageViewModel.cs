@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace PaysVilleApp.ViewModels
 {
-    public class PhaseIntroPageViewModel
+    public class PhaseStartPageViewModel
     {
         private string gameInfo = "";
         public string GameInfo
@@ -134,9 +134,9 @@ namespace PaysVilleApp.ViewModels
             }
         }
 
-        //Game info box properties
+        //Phase info box properties
 
-        string phaseInfoDisplay = "Phase information";
+        string phaseInfoDisplay = "Next Phase";
         public string PhaseInfoDisplay
         {
             get { return phaseInfoDisplay; }
@@ -155,132 +155,29 @@ namespace PaysVilleApp.ViewModels
                 phaseInfoDisplayTitle = value;
             }
         }
-
-        //Game info box Form properties
-
-        string gameInfoDisplayLabelOne = "Phase:";
-        public string GameInfoDisplayLabelOne
-        {
-            get { return gameInfoDisplayLabelOne; }
-            set
-            {
-                gameInfoDisplayLabelOne = value;
-            }
-        }
-
-        string gameInfoDisplayLabelOneContent = "";
-        public string GameInfoDisplayLabelOneContent
-        {
-            get { return gameInfoDisplayLabelOneContent; }
-            set
-            {
-                gameInfoDisplayLabelOneContent = value;
-            }
-        }
-
-
-        string gameInfoDisplayLabelTwo = "Chronometre:";
-        public string GameInfoDisplayLabelTwo
-        {
-            get { return gameInfoDisplayLabelTwo; }
-            set
-            {
-                gameInfoDisplayLabelTwo = value;
-            }
-        }
-
-        string gameInfoDisplayLabelTwoContent = "";
-        public string GameInfoDisplayLabelTwoContent
-        {
-            get { return gameInfoDisplayLabelTwoContent; }
-            set
-            {
-                gameInfoDisplayLabelTwoContent = value;
-            }
-        }
-
-        string gameInfoDisplayLabelThree = "Game letter:";
-        public string GameInfoDisplayLabelThree
-        {
-            get { return gameInfoDisplayLabelThree; }
-            set
-            {
-                gameInfoDisplayLabelThree = value;
-            }
-        }
-
-        string gameInfoDisplayLabelThreeContent = "";
-        public string GameInfoDisplayLabelThreeContent
-        {
-            get { return gameInfoDisplayLabelThreeContent; }
-            set
-            {
-                gameInfoDisplayLabelThreeContent = value;
-            }
-        }
-
-        string gameInfoDisplayLabelFour = "Chronometre:";
-        public string GameInfoDisplayLabelFour
-        {
-            get { return gameInfoDisplayLabelFour; }
-            set
-            {
-                gameInfoDisplayLabelFour = value;
-            }
-        }
-
-        string gameInfoDisplayLabelFourContent = "";
-        public string GameInfoDisplayLabelFourContent
-        {
-            get { return gameInfoDisplayLabelFourContent; }
-            set
-            {
-                gameInfoDisplayLabelFourContent = value;
-            }
-        }
-
-        string gameInfoDisplayLabelFive = "Game letter:";
-        public string GameInfoDisplayLabelFive
-        {
-            get { return gameInfoDisplayLabelFive; }
-            set
-            {
-                gameInfoDisplayLabelFive = value;
-            }
-        }
-
-        string gameInfoDisplayLabelFiveContent = "";
-        public string GameInfoDisplayLabelFiveContent
-        {
-            get { return gameInfoDisplayLabelFiveContent; }
-            set
-            {
-                gameInfoDisplayLabelFiveContent = value;
-            }
-        }
-
+        
         //Commands
 
-        public ICommand GoToThemePageIntroCommand { get; set; }
+        public ICommand GoToPhaseIntroPageCommand { get; set; }
         
         //Constructors
 
-        public PhaseIntroPageViewModel() 
+        public PhaseStartPageViewModel() 
         {
-            GoToThemePageIntroCommand = new Command(ExecuteGoToThemePageIntroCommand,CanExecuteGoToThemePageIntroCommand);
+            GoToPhaseIntroPageCommand = new Command(ExecuteGoToPhaseIntroPageCommand, CanExecuteGoToPhaseIntroPageCommand);
         }
 
         //Methods
 
-        public bool CanExecuteGoToThemePageIntroCommand() 
+        public bool CanExecuteGoToPhaseIntroPageCommand() 
         {
             return true;
         }
 
-        public void ExecuteGoToThemePageIntroCommand() 
+        public void ExecuteGoToPhaseIntroPageCommand() 
         {
             MainWindowViewModel mainWindow = (MainWindowViewModel) App.Current.MainWindow.DataContext;
-            mainWindow.DisplayedPage = "ThemePageIntro.xaml";
+            mainWindow.DisplayedPage = "PhaseIntroPage.xaml";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

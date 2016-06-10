@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Diagnostics;
-using System.Linq;
 
 
 namespace PaysVilleApp.ViewModels
@@ -18,6 +17,8 @@ namespace PaysVilleApp.ViewModels
         public IntroPageViewModel() 
         {
             GoToGameIntroPageCommand = new Command(ExecuteGoToGameIntroPageCommand,CanExecuteGoToGameIntroPageCommad);
+
+            ExitCommand = new Command(ExecuteExitCommand,CanExecuteExitCommad);
         }
 
         //Properties
@@ -50,6 +51,8 @@ namespace PaysVilleApp.ViewModels
 
         public ICommand GoToGameIntroPageCommand { get; set; }
 
+        public ICommand ExitCommand { get; set; }
+
         //Methods
 
         public bool CanExecuteGoToGameIntroPageCommad() 
@@ -61,6 +64,16 @@ namespace PaysVilleApp.ViewModels
         {
             var mainWindow =  App.Current.MainWindow.DataContext as MainWindowViewModel;
             mainWindow.DisplayedPage = "GamePageIntro.xaml";
+        }
+
+        public bool CanExecuteExitCommad()
+        {
+            return true;
+        }
+
+        public void ExecuteExitCommand()
+        {
+            App.Current.Shutdown();           
         }
 
     }

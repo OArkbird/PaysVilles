@@ -59,10 +59,14 @@
     <Compile Include="ViewModels\IntroPageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\PhaseIntroPageViewModel.cs" />
+    <Compile Include="ViewModels\PhaseStartPageViewModel.cs" />
     <Compile Include="ViewModels\ResultPageViewModel.cs" />
     <Compile Include="ViewModels\ThemePageIntroViewModel.cs" />
     <Compile Include="Views\PhaseIntroPage.xaml.cs">
       <DependentUpon>PhaseIntroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhaseStartPage.xaml.cs">
+      <DependentUpon>PhaseStartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ResultsPage.xaml.cs">
       <DependentUpon>ResultsPage.xaml</DependentUpon>
@@ -104,6 +108,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\PhaseIntroPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PhaseStartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
