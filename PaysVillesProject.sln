@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaysVilleApp", "PaysVilleAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PVRepositories", "PVRepositories\PVRepositories.csproj", "{4ECA5C03-E7F0-4E3B-A5EE-F29786333E5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PVRepositoriesTest", "PVRepositoriesTest\PVRepositoriesTest.csproj", "{E25A1DCD-E1B4-4CF3-8578-AEEC02758EC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4ECA5C03-E7F0-4E3B-A5EE-F29786333E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ECA5C03-E7F0-4E3B-A5EE-F29786333E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ECA5C03-E7F0-4E3B-A5EE-F29786333E5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E25A1DCD-E1B4-4CF3-8578-AEEC02758EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E25A1DCD-E1B4-4CF3-8578-AEEC02758EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E25A1DCD-E1B4-4CF3-8578-AEEC02758EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E25A1DCD-E1B4-4CF3-8578-AEEC02758EC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

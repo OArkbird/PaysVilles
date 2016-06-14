@@ -154,6 +154,13 @@
   <ItemGroup>
     <Resource Include="Images\StartGameButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dictionnary\capitalcity.txt" />
+    <Resource Include="dictionnary\car.txt" />
+    <Resource Include="dictionnary\country.txt" />
+    <Resource Include="dictionnary\general.txt" />
+    <Resource Include="dictionnary\pokemon.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
