@@ -42,6 +42,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Thema.cs" />
     <Compile Include="ThemeRepo.cs" />
+    <Compile Include="Word.cs" />
     <Compile Include="WordRepo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
